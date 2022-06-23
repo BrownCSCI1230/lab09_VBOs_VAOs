@@ -172,9 +172,9 @@ Note: These two functions will assume they apply to whichever VBO is currently b
 
 Task 11: Add the two attributes of position and color to your VAO.
 
-<details><summary>Does your std::vector look familiar?<summary/>
+<details><summary>Does your std::vector look familiar?</summary>
 It should! This is the same format of data we worked with in the last lab! Without knowing it, you were actually creating VBO/VAO ready data with position and normal attributes! Keep that in mind when working on the project!
-<details/>
+</details>
 
 ## 3: Unbinding Objects
 
