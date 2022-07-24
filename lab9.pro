@@ -9,21 +9,27 @@ CONFIG += c++20
 SOURCES += \
     glrenderer.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    glew-2.2.0/src/glew.c
 
 HEADERS += \
     CS1230Lib/resourceloader.h \
     glrenderer.h \
-    mainwindow.h
+    mainwindow.h \
+    glew-2.2.0/include/GL/glew.h
 
 
-# Default rules for deployment.
-#qnx: target.path = /tmp/$${TARGET}/bin
-#else: unix:!android: target.path = /opt/$${TARGET}/bin
-#!isEmpty(target.path): INSTALLS += target
+unix:!macx{
+    LIBS += lGLU
+}
 
-INCLUDEPATH += glm
-DEPENDPATH += glm
+win32 {
+    DEFINES += GLEW_STATIC
+    LIBS += -lopengl32 -lglu32
+}
+
+INCLUDEPATH += glm glew-2.2.0/include
+DEPENDPATH += glm glew-2.2.0/include
 
 DISTFILES += \
     Resources/Shaders/default.frag \

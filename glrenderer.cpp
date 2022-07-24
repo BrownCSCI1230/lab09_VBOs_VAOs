@@ -17,11 +17,10 @@ GLRenderer::~GLRenderer()
 
 void GLRenderer::initializeGL()
 {
-    // Setting up OpenGL for Qt Creator //
-    QSurfaceFormat fmt;
-    fmt.setVersion(3, 1);
-    QOpenGLContext::currentContext()->setFormat(fmt);
-    initializeOpenGLFunctions();
+    glewExperimental = GL_TRUE;
+    GLenum err = glewInit();
+    if (GLEW_OK != err) fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
+    fprintf(stdout, "Using GLEW %s\n", glewGetString(GLEW_VERSION));
 
     //TASK 2: Set the clear color here
     glClearColor(0.0, 0.0, 0.0, 1.0);

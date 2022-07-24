@@ -2,18 +2,21 @@
 
 #include <QApplication>
 #include <QScreen>
-#include <iostream>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QCoreApplication::setApplicationName("Qt Hello GL 2 Example");
+    QCoreApplication::setApplicationName("Lab 9: VBOs/VAOs");
     QCoreApplication::setOrganizationName("QtProject");
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
+    QSurfaceFormat fmt;
+    fmt.setVersion(4, 1);
+    fmt.setProfile(QSurfaceFormat::CoreProfile);
+    QSurfaceFormat::setDefaultFormat(fmt);
+
     MainWindow w;
-    //w.resize(w.sizeHint());
     w.resize(600, 400);
     int desktopArea = QGuiApplication::primaryScreen()->size().width() *
                       QGuiApplication::primaryScreen()->size().height();

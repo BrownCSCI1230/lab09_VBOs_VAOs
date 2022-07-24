@@ -1,13 +1,11 @@
 #ifndef GLRENDERER_H
 #define GLRENDERER_H
 
+#include "GL/glew.h"
 #include <QOpenGLWidget>
-#include <QOpenGLFunctions_3_1>
 #include "glm.hpp"
 
-QT_FORWARD_DECLARE_CLASS(QOpenGLShaderProgram)
-
-class GLRenderer : public QOpenGLWidget, protected QOpenGLFunctions_3_1
+class GLRenderer : public QOpenGLWidget
 {
 public:
     GLRenderer(QWidget *parent = nullptr);
