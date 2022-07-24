@@ -11,7 +11,7 @@ MainWindow::MainWindow()
     this->setLayout(container);
 }
 
-MainWindow::~MainWindow()
+void MainWindow::finish()
 {
+    glRenderer->finish();
 }
-

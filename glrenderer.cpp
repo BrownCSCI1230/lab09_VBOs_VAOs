@@ -9,7 +9,7 @@ GLRenderer::GLRenderer(QWidget *parent)
 
 }
 
-GLRenderer::~GLRenderer()
+void GLRenderer::finish()
 {
     makeCurrent();
     doneCurrent();

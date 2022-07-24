@@ -27,5 +27,7 @@ int main(int argc, char *argv[])
     else
         w.showMaximized();
 
-    return a.exec();
+    int return_val = a.exec();
+    w.finish();
+    return return_val;
 }

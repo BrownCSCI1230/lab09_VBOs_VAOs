@@ -11,7 +11,7 @@ class GLRenderer : public QOpenGLWidget
 {
 public:
     GLRenderer(QWidget *parent = nullptr);
-    ~GLRenderer();
+    void finish();
 
 protected:
     void initializeGL() override;   //Called once at the start of the program
