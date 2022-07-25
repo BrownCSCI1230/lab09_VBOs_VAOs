@@ -5,8 +5,6 @@
 #include <QOpenGLWidget>
 #include "glm.hpp"
 
-QT_FORWARD_DECLARE_CLASS(QOpenGLShaderProgram)
-
 class GLRenderer : public QOpenGLWidget
 {
 public:

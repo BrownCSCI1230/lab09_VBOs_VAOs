@@ -11,7 +11,7 @@ GLRenderer::GLRenderer(QWidget *parent)
 
 void GLRenderer::finish()
 {
-    makeCurrent();
+    glDeleteProgram(m_shader);
     doneCurrent();
 }
 
